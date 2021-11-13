@@ -25,6 +25,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('auth/', include("accounts.urls_usermanagment")),
     path('auth/', include("accounts.urls_jwt")),
+    path('', include("school_management.urls")),
+
 ]
 
 urlpatterns = urlpatterns + swaggerd
