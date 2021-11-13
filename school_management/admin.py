@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import School,Teacher
+from .models import School,Teacher,Student
 # Register your models here.
 
 
@@ -14,3 +14,17 @@ class SchoolManagementAdmin(admin.ModelAdmin):
 @admin.register(Teacher)
 class TeacherManagementAdmin(admin.ModelAdmin):
     list_display = ('first_name','last_name','mobile', 'email','school')
+    readonly_fields = ('created_date', 'updated_date','updated_by','created_by')
+    search_fields = ['first_name','school__name','last_name']
+    list_filter = ['school',]
+
+
+@admin.register(Student)
+class StudentManagementAdmin(admin.ModelAdmin):
+    list_display = ('first_name','last_name','mobile', 'email','school')
+    readonly_fields = ('created_date', 'updated_date','updated_by','created_by')
+    search_fields = ['first_name','school__name','last_name']
+    list_filter = ['school',]
+
+
+

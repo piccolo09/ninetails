@@ -51,14 +51,14 @@ class School(BaseModel):
     #     return super().clean()
     
     def __str__(self) -> str:
-        return f"{self.name} | {self.owner}"
+        return f"{self.name}"
 
     @property
     def student_count(self):
         """
             will check students and return count of students
         """
-        return random.randint(10,2347)
+        return self.students.count()
     
     @property
     def teacher_count(self):
