@@ -5,6 +5,7 @@ from pathlib import Path
 from decouple import config
 import os
 from datetime import timedelta
+import dj_database_url
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = config('SECRET_KEY')
@@ -67,8 +68,9 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-# DATABASES['default'] = dj_database_url.parse(
-#   config('DATABASE_URL'),conn_max_age=600, ssl_require=True)
+if not DEBUG:
+    DATABASES['default'] = dj_database_url.parse(
+    config('DATABASE_URL'),conn_max_age=600, ssl_require=True)
 
 
 TEMPLATES = [
@@ -103,9 +105,9 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-WSGI_APPLICATION = 'marauder.wsgi.application'
+WSGI_APPLICATION = 'ninetails.wsgi.application'
 
-ROOT_URLCONF = 'marauder.urls'
+ROOT_URLCONF = 'ninetails.urls'
 
 AUTH_USER_MODEL = 'accounts.User'
 

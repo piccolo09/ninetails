@@ -1,1 +1,1 @@
-web: gunicorn marauder.wsgi
+web: gunicorn ninetails.wsgi

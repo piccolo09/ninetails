@@ -2,7 +2,7 @@
 
 from distutils.core import setup
 
-setup(name='Marauder',
+setup(name='ninetails',
       version='1.0',
       description='Django Utility',
       author='Vishal P',
