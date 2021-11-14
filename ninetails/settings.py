@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'corsheaders',
     'djoser',
     'accounts',
-    'school_management'
+    'school_management',
+    'course_management',  
 ]
 
 MIDDLEWARE = [

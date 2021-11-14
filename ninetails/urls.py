@@ -26,6 +26,7 @@ urlpatterns = [
     path('auth/', include("accounts.urls_usermanagment")),
     path('auth/', include("accounts.urls_jwt")),
     path('', include("school_management.urls")),
+    path('', include("course_management.urls")),
 
 ]
 
